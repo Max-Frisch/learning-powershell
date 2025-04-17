@@ -1,11 +1,14 @@
 
+# Importing a file containing the sensitive login details and IDs
+. "$PSScriptRoot\config.ps1"
+
 # Retrieve and print a list of locations, the left column "Location" is what we use
 Get-AzLocation | Select-Object Location, DisplayName
 
 # Create a new resource group within the connected Subscription
 # The two important attributes are the resource group's name and it's location
 $ResourceGroupName = "powershell-grp"
-$Location = "southeastasia"
+$Location = $Region
 
 New-AzResourceGroup -Name $ResourceGroupName -Location $Location
 

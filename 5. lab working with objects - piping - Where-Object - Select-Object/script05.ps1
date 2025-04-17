@@ -49,6 +49,7 @@ $MobilePhones
 
 # Accessing the Value of an item in a hash map, in the array "DefaultApps", in a PSCustomObject, which is an item in the array $MobilePhones
 Write-Host $MobilePhones[1].DefaultApps[1].Name
+Write-Host $MobilePhones[1].DefaultApps.Item(1).Name # same item, different approach
 
 # Iterating over the $MobilePhones array with foreach, using pipes to filter with Where-Object and then filtering/selecting which properties to print
 foreach ($MobilePhone in $MobilePhones) {

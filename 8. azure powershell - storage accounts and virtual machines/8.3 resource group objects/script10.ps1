@@ -46,8 +46,8 @@ $ResourceGroupScope = "powershell*"
 # Looping over ALL resource groups($AllResourceGroups), removing only the ones matching our "scope" and printing out the remaining resource groups, not deleted.
 foreach ($Group in $AllResourceGroups) {
     if ($Group.ResourceGroupName -like $ResourceGroupScope+"*") {
-        Remove-AzResourceGroup -Name $Group.ResourceGroupName -Force
         Write-Host "Removing Resource Group: $($Group.ResourceGroupName).."
+        Remove-AzResourceGroup -Name $Group.ResourceGroupName -Force
     } else {
         Write-Host "Skipping: $($Group.ResourceGroupname)"
     }

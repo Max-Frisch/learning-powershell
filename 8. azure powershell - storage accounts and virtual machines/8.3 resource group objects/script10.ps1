@@ -20,7 +20,7 @@ function New-ResourceGroups {
         Write-Host ""
     }
 }
-New-ResourceGroups -NamingScheme "powershell" -NumberOfGroups 2
+New-ResourceGroups -NamingScheme "storage" -NumberOfGroups 1
 
 # Create a list of selected/specific resource group objects
 $SpecificResourceGroups = Get-AzResourceGroup | Where-Object {$_.ResourceGroupName -like "powershell*"}

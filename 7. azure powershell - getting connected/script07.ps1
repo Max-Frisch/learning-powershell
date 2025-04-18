@@ -1,5 +1,8 @@
 
 
+# This command prevents saving the Account credentials in the powershell context
+Disable-AzContextAutosave
+
 # Connecting the PowerShell session to Azure
 Connect-AzAccount
 

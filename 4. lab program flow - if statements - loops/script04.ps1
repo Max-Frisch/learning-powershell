@@ -4,11 +4,13 @@
 ## If statements
 Write-Host ""
 
-$Weather = "Squirrel"
-if($Weather -eq "Rainy") {
+$Weather = "Rainy"
+if($Weather -eq "Sunny") {
+    Write-Output "It seems to be $Weather."
     Write-Output "Wear a hat and maybe sunscreen!"
 }
-elseif ($Weather -eq "Sunny") {
+elseif ($Weather -eq "Rainy") {
+    Write-Output "It seems to be $Weather."
     Write-Output "Better bring an umbrella!"
 }
 else {
@@ -22,8 +24,9 @@ Write-Host ""
 # Counting from 5 down to 0. The counter variable has to be declared first
 $i = 5
 Write-Host "while loop:"
+
 while($i -ge 0) {
-    Write-Host "The number is: $i"
+    Write-Host "Counting down: $i"
     $i--
 }
 Write-Host ""
@@ -36,10 +39,12 @@ for ($i=0; $i -lt 5; $i++) {
 Write-Host ""
 
 # This is the foreach loop, forach (iterator in iterable) {code}
+# First create an array of colors to "loop through"
 $Colours = @("Green", "Blue", "Black", "Yellow")
 
 # Looping over each item of the array
 Write-Host "for-each loop:"
+
 foreach ($Colour in $Colours) {
     write-host "$Colour"
 }

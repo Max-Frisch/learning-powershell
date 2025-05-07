@@ -42,7 +42,9 @@ Add-Numbers 5 "12" # the string "12" is automatically cast to int
 
 # The more idiomatic way for input parameters is to use the param() block instead of inline parameters
 function Add-Five {
-    param([int]$num)
+    param(
+        [int]$num
+    )
     Write-Output ($num+5)
 }
 Add-Five 5
@@ -91,6 +93,41 @@ function Get-UpperCase {
         Write-Output $Something.ToUpper()
     }
 }
-"hello", "world" | Get-UpperCase
+"hello", "world", "blah" | Get-UpperCase
 
+# Passing in an object into a function. In this case an Array of PSCustomObjects
 
+# Creating the $People array from before
+$People = @(
+    [PSCustomObject]@{
+        Name = "Peter"
+        Age  = 31
+        Sex  = "male"
+    },
+    [PSCustomObject]@{
+        Name = "Bob"
+        Age  = 25
+        Sex  = "male"
+    },
+    [PSCustomObject]@{
+        Name = "Steffi"
+        Age  = 40
+        Sex  = "female"
+    }
+)
+
+function Get-People {
+    [CmdletBinding()]
+    param(
+        [Object[]] $People
+    )
+    foreach ($Person in $People) {
+        # $Person.Name
+        # $Person.Age
+        # $Person.Sex
+        # Write-Host ""
+        $Person
+    }
+}
+
+Get-People $People

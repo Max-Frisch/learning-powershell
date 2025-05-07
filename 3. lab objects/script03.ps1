@@ -9,6 +9,7 @@ $Person = [PSCustomObject]@{
 
 # Printing out the whole object
 Write-Output $Person
+
 # Accessing a value of a property
 Write-Output $Person.Name
 
@@ -31,6 +32,7 @@ $People = @(
         Sex  = "female"
     }
 )
+
 # Printing out the array of objects
 Write-Output $People
 

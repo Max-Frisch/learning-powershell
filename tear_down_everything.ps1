@@ -16,3 +16,17 @@ if (! $(Get-AzResourceGroup) -or ! $(Get-AzResource)) {
 } else {
     Write-Host -ForegroundColor Red "Some resource groups or resources have not been deleted! Check manually!!"
 }
+
+
+Disconnect-AzAccount
+Disconnect-MgGraph
+
+$context = Get-AzContext -ErrorAction SilentlyContinue
+if ($context){
+    Disconnect-AzAccount
+}
+
+Clear-AzContext
+
+Get-AzContext
+Get-MgContext
